@@ -1,0 +1,21 @@
+{
+    "name": "az13js/php-phi3-llama-cpp",
+    "description": "Use llama.cpp, run Phi3-mini.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "function.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "az13js",
+            "email": "1654602334@qq.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=7.4"
+    }
+}
