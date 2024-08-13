@@ -12,11 +12,12 @@ function runModel(string $userPrompt, string $systemPrompt = ''): string
 
     $command = [
         $executableFilePath,
+        '--log-disable',
+        '--no-display-prompt',
+        '-fa',
         '-m', $modelFilePath,
         '-t', $numberThreadInRuntime,
         '-p', $prompt,
-        '--log-disable',
-        '--no-display-prompt',
     ];
 
     $tmpFileOut = '.runModel.out.txt';
