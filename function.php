@@ -20,8 +20,9 @@ function runModel(string $userPrompt, string $systemPrompt = ''): string
         '-p', $prompt,
     ];
 
-    $tmpFileOut = '.runModel.out.txt';
-    $tmpFileErr = '.runModel.err.txt';
+    $pid = getmypid();
+    $tmpFileOut = ".$pid.runModel.out.txt";
+    $tmpFileErr = ".$pid.runModel.err.txt";
 
     if (false === ($processResource = proc_open(
         $command,
