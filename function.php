@@ -14,11 +14,18 @@ function runModel(string $userPrompt, string $systemPrompt = ''): string
         $executableFilePath,
         '--log-disable',
         '--no-display-prompt',
-        '-fa',
         '-m', $modelFilePath,
         '-t', $numberThreadInRuntime,
         '-p', $prompt,
     ];
+    if (is_file('.llama.cpp.json')) {
+        $config = json_decode(file_get_contents('.llama.cpp.json'), true);
+        if (is_array($config)) {
+            if (isset($config['args'])) {
+                $command = array_merge($command, $config['args']);
+            }
+        }
+    }
 
     $pid = getmypid();
     $tmpFileOut = ".$pid.runModel.out.txt";
