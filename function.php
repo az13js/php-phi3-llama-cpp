@@ -57,7 +57,7 @@ function runModel(string $userPrompt, string $systemPrompt = ''): string
     $returnValue = '';
 
     if (false === $begig || false === $end) {
-        $returnValue = '';
+        $returnValue = $result;
     } else {
         $returnValue = substr($result, $begig, $end);
     }
